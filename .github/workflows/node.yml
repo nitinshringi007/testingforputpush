@@ -22,4 +22,9 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
             npm install --production
-            pm2 restart node-demo
+             if ! command -v pm2 &> /dev/null
+             then
+            sudo npm install -g pm2
+             fi
+             pm2 restart node-demo || pm2 start server.js --name node-demo
+           
