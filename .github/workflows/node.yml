@@ -18,7 +18,7 @@ jobs:
           key: ${{ secrets.DEPLOY_KEY }}
           port: 225
           script: |
-            cd /testingforputpush/node-demo
+            cd /root/testingforputpush/node-demo/
             git fetch origin main
             git reset --hard origin/main
             npm install --production
